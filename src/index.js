@@ -9,5 +9,8 @@ async function main() {
     console.log('Server on port ', app.get('port'));
 
 }
+app.get("/", (req, res) => {
+    res.send("👷🏻‍♂️ Backend de InventServer funcionando!!... 👍🏼");
+  });
 
-main();
+main();        

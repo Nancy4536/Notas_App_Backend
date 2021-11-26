@@ -10,12 +10,13 @@ notesControl.getNotes = async (req, res) => {
 
 // Crea las notas
 notesControl.createNotes = async (req, res) => {
-    const { title, content, date, author } = req.body;
+    const { title, content, date, author, cantidad } = req.body;
     const newNote = noteModel({
         title: title,
         content: content,
         date: date,
-        author: author
+        author: author,
+        cantidad: cantidad
     })
     await newNote.save();
     res.json({message: 'Nota Guardada...'})
@@ -27,11 +28,12 @@ notesControl.getOneNote = async (req, res) => {
 }
 
 notesControl.updateNotes = async (req, res) => {
-    const {title, content, author} = req.body
+    const {title, content, author, cantidad} = req.body
     await noteModel.findOneAndUpdate({_id: req.params.id}, {
         title: title,
         content: content,
-        author: author
+        author: author,
+        cantidad: cantidad
     })
     res.json({message: 'Nota Actualizada...'})
 }

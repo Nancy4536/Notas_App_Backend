@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const URI = process.env.MONGODB_URI ? process.env.MONGODB_URI 
-: 'mongodb://localhost/databasetest';
+const URI = 'mongodb+srv://pruebamernis:pruebamerniss@cluster0.mgone.mongodb.net/InventServ?retryWrites=true&w=majority';
 
 mongoose.connect(URI, {
     useNewUrlParser: true,

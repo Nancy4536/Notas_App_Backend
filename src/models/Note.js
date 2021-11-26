@@ -7,6 +7,10 @@ const noteSchema = new Schema({
         require: true,
     },
     author: String,
+    cantidad: {
+        type: Number,
+        default: 0
+    },
     date: {
         type: Date,
         default: Date.now
